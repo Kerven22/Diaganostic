@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="UseCases\Category\CreateCategory\" />
+      <Folder Include="UseCases\Category\GetCategory\" />
+      <Folder Include="UseCases\Product\CreateProducts\" />
+      <Folder Include="UseCases\Product\GetProducts\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentAssertions" Version="8.8.0" />
+      <PackageReference Include="MediatR" Version="12.1.1" />
+      <PackageReference Include="Moq" Version="4.20.72" />
+    </ItemGroup>
+
+</Project>
