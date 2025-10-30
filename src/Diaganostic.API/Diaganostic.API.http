@@ -1,0 +1,6 @@
+@Diaganostic.API_HostAddress = http://localhost:5041
+
+GET {{Diaganostic.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
