@@ -1,0 +1,35 @@
+version: '3.9'
+
+networks:
+  default:
+    name: 'Diaganostic'    
+    
+    
+volumes:
+  opensearch-diganostic:
+  
+  
+    
+services:
+  opensearch:
+    image: opensearchproject/opensearch:2.9.0
+    container_name: opensearch-diaganostic
+    ports:
+      - 9200:9200
+      - 9600:9600
+    environment:
+      discovery.type: single-node
+      plugins.security.disabled: 'true'
+    volumes:
+      - opensearch-diganostic:/usr/share/opensearch/data
+
+  opensearch-dashboard:
+    image: opensearchproject/opensearch-dashboards:2.9.0
+    container_name: opensearch-dashboard-diaganostic
+    ports:
+      - 5601:5601
+    environment:
+      OPENSEARCH_HOSTS: '["http://opensearch-diaganostic:9200"]'
+      DISABLE_SECURITY_DASHBOARDS_PLUGIN: 'true'
+    depends_on:
+      - opensearch
